@@ -16,7 +16,7 @@ module.exports = {
         asuna.log(pluginName, pluginVersion, pluginAuthor, false)
 
         if (user != false) {
-            msg.reply(user[0].style+" Hey "+user[0].username)
+            msg.reply(user)
         }
     }
 }
