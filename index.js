@@ -7,7 +7,9 @@ process.on('uncaughtException', err => {
     console.error(err && err.stack)
 });
 
-const client = new Client();
+const client = new Client({
+    authStrategy: new LocalAuth()
+});
 //  puppeteer: { executablePath: '/usr/bin/google-chrome-stable', headless: false, 	args: ['--no-sandbox'], }
 
 client.on('qr', (qr) => {
@@ -39,12 +41,18 @@ client.on('group_join', (notification) => {
 client.on('message', async msg => {
     var value = msg.body;
     var args = value.split(" ");
-
+    console.log(msg);
     switch (args[0]) {
         case "bot":
             require('./plugins/bot', (msg, value, args));
         break;
     }
 });
+
+process.on("SIGINT", async () => {
+    console.log("(SIGINT) Shutting down...");
+    await client.destroy();
+    process.exit(0);
+})
 
 client.initialize();
