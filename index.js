@@ -39,10 +39,11 @@ client.on('group_join', (notification) => {
 client.on('message', async msg => {
     var value = msg.body;
     var args = value.split(" ");
-    console.log(msg);
+
     switch (args[0]) {
         case "bot":
             require('./plugins/bot', (msg, value, args));
+            console.log("bot");
         break;
     }
 });
