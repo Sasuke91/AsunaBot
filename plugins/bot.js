@@ -11,6 +11,7 @@ module.exports = {
 
         var db = require('./db');
         var user = require('./user.js');
+        var user = user.details(msg);
         var asuna = require('./asuna');
 
         asuna.log(pluginName, pluginVersion, pluginAuthor, false)

@@ -8,7 +8,7 @@ var pluginName = "user"
 var pluginVersion = 1.0
 
 module.exports = {
-    identify: function (msg) {
+    details: function (msg) {
 
         var db = require('./db');
         var asuna = require('./asuna');
@@ -26,7 +26,7 @@ module.exports = {
         `SELECT COUNT(*) AS RowCount FROM Users WHERE number='${number}'`
         , function (error, results, fields) {
             if (error) asuna.log(pluginName, pluginVersion, pluginAuthor, true, error.message);
-            console.log(results[0].RowCount)
+          
             if (Number(results[0].RowCount) < 1) {
 
                 msg.reply("please register to continue")
