@@ -9,8 +9,9 @@ process.on('uncaughtException', err => {
 
 const client = new Client({
     authStrategy: new LocalAuth(),
-    puppeteer: { executablePath: '/usr/bin/google-chrome-stable', headless: true }
+    puppeteer: { executablePath: '/usr/bin/google-chrome-stable', headless: false, 	args: ['--no-sandbox'], }
 });
+
 
 client.on('qr', (qr) => {
     // NOTE: This event will not be fired if a session is specified.
