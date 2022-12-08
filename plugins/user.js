@@ -11,7 +11,7 @@ module.exports = {
     identify: function (msg) {
 
         var db = require('./db');
-
+        var asuna = require('./asuna');
 
         var number;
         if (msg.author == "undefined") {
@@ -45,7 +45,7 @@ module.exports = {
     
                     var res = JSON.parse(JSON.stringify(results))
             
-                    return callback(res[0]);
+                    return callback(res);
             })
             }
         });
