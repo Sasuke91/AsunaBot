@@ -11,7 +11,7 @@ module.exports = {
     identify: function (msg) {
 
         var db = require('./db');
-        var log = require('./log');
+
 
         var number;
         if (msg.author == "undefined") {
@@ -30,7 +30,7 @@ module.exports = {
             if (Number(results[0].RowCount) < 1) {
 
                 msg.reply("please register to continue")
-                
+
                 return callback(false);
 
             } else {

@@ -10,9 +10,6 @@ var pluginVersion = 1.0
 module.exports = {
     log: function (pluginName, pluginVersion, pluginAuthor, isError, errorMessage) {
 
-        var db = require('./db');
-        var log = require('./log');
-        
         console.log("using module "+pluginName+" version "+pluginVersion)
 
     }
