@@ -15,5 +15,8 @@ module.exports = (msg, value, args) => {
 
         if (user != false) {
             msg.reply(user.style+" Hey "+user.username)
+        } else {
+            console.log("not registeed")
         }
+        console.log("not lol")
 };
