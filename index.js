@@ -8,7 +8,10 @@ process.on('uncaughtException', err => {
 });
 
 const client = new Client({
-    authStrategy: new LocalAuth()
+    authStrategy: new LocalAuth(),
+    puppeteer: {
+		args: ['--no-sandbox']
+	}
 });
 //  puppeteer: { executablePath: '/usr/bin/google-chrome-stable', headless: false, 	args: ['--no-sandbox'], }
 
