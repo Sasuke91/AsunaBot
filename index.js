@@ -42,8 +42,8 @@ client.on('message', async msg => {
 
     switch (args[0]) {
         case "bot":
-            var bot = require('./plugins/bot', (msg, value, args));
-            console.log(typeof bot);
+            var bot = require('./plugins/bot');
+            bot.reply(msg, value, args);
         break;
     }
 });

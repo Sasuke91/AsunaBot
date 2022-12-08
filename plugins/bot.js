@@ -5,7 +5,9 @@ var pluginName = "bot"
 var pluginAuthor = "Feuerherz"
 var pluginVersion = 1.0
 
-module.exports = (msg, value, args) => {
+module.exports = {
+
+    reply: function (msg, value, args)  {
 
         var db = require('./db');
         var user = require('./user.js');
@@ -15,8 +17,6 @@ module.exports = (msg, value, args) => {
 
         if (user != false) {
             msg.reply(user.style+" Hey "+user.username)
-        } else {
-            console.log("not registeed")
         }
-        console.log("not lol")
-};
+    }
+}
