@@ -43,7 +43,7 @@ client.on('message', async msg => {
     switch (args[0]) {
         case "bot":
             var bot = require('./plugins/bot', (msg, value, args));
-            console.log("bot");
+            console.log(typeof bot);
         break;
     }
 });
