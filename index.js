@@ -37,7 +37,7 @@ client.on('group_join', (notification) => {
 });
 
 client.on('message', async msg => {
-    var value = msg;
+    var value = msg.body;
     var args = value.split(" ");
 
     switch (args[0]) {
