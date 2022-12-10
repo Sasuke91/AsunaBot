@@ -42,7 +42,7 @@ client.on('message', async msg => {
     var value = msg.body;
     var args = value.split(" ");
 
-    switch (args[0]) {
+    switch (args[0].toLowerCase()) {
         case "bot":
             var bot = require('./plugins/bot');
             bot.reply(msg, value, args);
