@@ -10,40 +10,40 @@ module.exports = {
     download: async function (msg, value, args, user, client, MessageMedia)  {
 
         if (args.length < 2) return msg.reply(user.style+" > Asuna\n\n Please submit type."+
-        "\ņ\n.sfw waifu"+
-        "\ņ.sfw neko"+
-        "\ņ.sfw megumin"+
-        "\ņ.sfw bully"+
-        "\ņ.sfw cuddle"+
-        "\ņ.sfw cry"+
-        "\ņ.sfw hug"+
-        "\ņ.sfw awoo"+
-        "\ņ.sfw kiss"+
-        "\ņ.sfw lick"+
-        "\ņ.sfw pat"+
-        "\ņ.sfw smug"+
-        "\ņ.sfw bonk"+
-        "\ņ.sfw yeet"+
-        "\ņ.sfw blush"+
-        "\ņ.sfw smile"+
-        "\ņ.sfw wave"+
-        "\ņ.sfw highfive"+
-        "\ņ.sfw handhold"+
-        "\ņ.sfw nom"+
-        "\ņ.sfw bite"+
-        "\ņ.sfw glomp"+
-        "\ņ.sfw slap"+
-        "\ņ.sfw kill"+
-        "\ņ.sfw kick"+
-        "\ņ.sfw happy"+
-        "\ņ.sfw wink"+
-        "\ņ.sfw poke"+
-        "\ņ.sfw dance"+
-        "\ņ.sfw cringe"+
-        "\ņ\n.nsfw waifu"+
-        "\ņ.nsfw neko"+
-        "\ņ.nsfw trap"+
-        "\ņ.nsfw blowjob")
+        "\n\n.sfw waifu"+
+        "\n.sfw neko"+
+        "\n.sfw megumin"+
+        "\n.sfw bully"+
+        "\n.sfw cuddle"+
+        "\n.sfw cry"+
+        "\n.sfw hug"+
+        "\n.sfw awoo"+
+        "\n.sfw kiss"+
+        "\n.sfw lick"+
+        "\n.sfw pat"+
+        "\n.sfw smug"+
+        "\n.sfw bonk"+
+        "\n.sfw yeet"+
+        "\n.sfw blush"+
+        "\n.sfw smile"+
+        "\n.sfw wave"+
+        "\n.sfw highfive"+
+        "\n.sfw handhold"+
+        "\n.sfw nom"+
+        "\n.sfw bite"+
+        "\n.sfw glomp"+
+        "\n.sfw slap"+
+        "\n.sfw kill"+
+        "\n.sfw kick"+
+        "\n.sfw happy"+
+        "\n.sfw wink"+
+        "\n.sfw poke"+
+        "\n.sfw dance"+
+        "\n.sfw cringe"+
+        "\n\n.nsfw waifu"+
+        "\n.nsfw neko"+
+        "\n.nsfw trap"+
+        "\n.nsfw blowjob")
 
         var asuna = require('./asuna');
         var getJSON = require('get-json')

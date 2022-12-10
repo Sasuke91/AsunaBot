@@ -10,10 +10,10 @@ module.exports = {
     download: async function (msg, value, args, user, client, MessageMedia)  {
 
         if (args.length < 2) return msg.reply(user.style+" > Asuna\n\n Please submit type."+
-        "\ņ\ņ.nsfw waifu"+
-        "\ņ.nsfw neko"+
-        "\ņ.nsfw trap"+
-        "\ņ.nsfw blowjob")
+        "\n\n.nsfw waifu"+
+        "\n.nsfw neko"+
+        "\n.nsfw trap"+
+        "\n.nsfw blowjob")
 
         var asuna = require('./asuna');
         var getJSON = require('get-json')
