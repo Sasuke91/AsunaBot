@@ -16,9 +16,9 @@ module.exports = {
     format: function (date, callback) {
 
         var finalTime;
-        var time = (dateInSec - Number(date))
         const dateInSec = Math.floor(new Date().getTime() / 1000) // in seconds
-    
+        var time = (dateInSec - Number(date))
+        
         if (time / 60 / 60 / 24 > 364) {
             finalTime = time / 60 / 60 / 24 / 365 + ". year(s) ago"
         } else if (time / 60 / 60 / 24 > 30) {
