@@ -11,7 +11,7 @@ module.exports = {
 
         var asuna = require('./asuna');
         var isQuote = msg.hasQuotedMsg
-        if (!isQuote) return reply("please quote a media")
+        if (!isQuote) return msg.reply("please quote a media")
         msg.react("⌛")
         if (value.length > 1) {
             sticker(value)
@@ -29,15 +29,15 @@ module.exports = {
                     
                         msg.react("🖤")
                     } catch (err) {
-                        msg.reply(style + " there was an error lol cryptic details:\n\n\n" + err.message)
+                        msg.reply(user.style + " there was an error lol cryptic details:\n\n\n" + err.message)
                         msg.react("😞")
                     }
 
                 } else {
-                    msg.reply(style + " reply to a picture")
+                    msg.reply(user.style + " reply to a picture")
                 }
             } catch (err) {
-                msg.reply(style + " there was an error lol cryptic details:\n\n\n" + err.message)
+                msg.reply(user.style + " there was an error lol cryptic details:\n\n\n" + err.message)
                 msg.react("😞")
             }
         }
