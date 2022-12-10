@@ -22,6 +22,7 @@ module.exports = {
             +"\n.nsfw"
             +"\n.slot"
             +"\n.gartic"
+            +"\n.translate"
         )
 
         asuna.log(pluginName, pluginVersion, pluginAuthor, false)

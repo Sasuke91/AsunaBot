@@ -1,4 +1,5 @@
 // AsunaBot
+// set wait_timeout=28800
 
 const { Client, LocalAuth, Location, List, Buttons, MessageMedia, NoAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
@@ -145,6 +146,16 @@ client.on('message', async msg => {
                     case "removeword":
                         var gartic = require('./plugins/gartic.js');
                         gartic.removeword(msg, value, args, user);
+                    break;
+                    case "translate":
+                    case "tl":
+                        var translate = require('./plugins/translate.js');
+                        translate.tl(msg, value, args, user);
+                    break;
+                    case "sticker":
+                    case "s":
+                        var sticker = require('./plugins/sticker.js');
+                        sticker.convert(msg, value, args, user, client, MessageMedia);
                     break;
                 }
             }
