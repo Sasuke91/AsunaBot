@@ -39,7 +39,7 @@ client.on('group_join', (notification) => {
 });
 
 // Modules
-var user = require('./user.js');
+var user = require('./plugins/user.js');
 
 client.on('message', async msg => {
 
