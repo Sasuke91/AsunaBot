@@ -70,6 +70,10 @@ client.on('message', async msg => {
     user.details(msg, function(user){
         // returns false or user
         if (user != false) {
+            if (switchMsg == "register") {
+                var register = require('./plugins/register');
+                register.insert(msg, value, args, user);
+            }
             if (user.policy == "no" && (switchMsg == "agree")) {
                 set.info(msg, "policy","yes", function(success){
                     // returns false or user
@@ -89,6 +93,7 @@ client.on('message', async msg => {
             if (isCommand) {
                 switch (switchMsg.toLowerCase()) {
                     case "bot":
+                    case "asuna":
                         var bot = require('./plugins/bot');
                         bot.reply(msg, value, args, user);
                     break;
@@ -97,8 +102,12 @@ client.on('message', async msg => {
                         me.reply(msg, value, args, user);
                     break;
                     case "user":
-                        var me = require('./plugins/userinfo.js');
-                        me.reply(msg, value, args, user);
+                        var userinfo = require('./plugins/userinfo.js');
+                        userinfo.reply(msg, value, args, user);
+                    break;
+                    case "song":
+                        var song = require('./plugins/song.js');
+                        song.download(msg, value, args, user);
                     break;
                 }
             }

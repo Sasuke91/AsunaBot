@@ -26,8 +26,8 @@ module.exports = {
                             +"\n> "+user.messages+" commands"
                             +"\n> "+user.clearnumber
                             +"\n> "+user.status+" [id "+user.user_id+"]"
-                            +"\n> "+user.gartic+" > "+user.gartic_points
-                            +"\n> "+user.slot+" > "+user.slot_points
+                            +"\n> gartic > "+user.gartic_points
+                            +"\n> slot > "+user.slot_points
                             +"\n\n_star since "+date+"_"
                         )
                     });
