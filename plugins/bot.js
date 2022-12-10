@@ -12,11 +12,20 @@ module.exports = {
         var db = require('./db');
         var asuna = require('./asuna');
 
-        msg.reply(user.style+" Hey "+user.username)
+        if (args.length < 2) return msg.reply(user.style+" Hey "+user.username)
+                     
+        var alexa = require("alexa-bot-api-v4");
+        var ai = new alexa();
 
+        // [] represents context, since it's an array
+        ai.getReply(`${value}`, [], "english", "O_o").then((replys) => {
+
+            //Do your stuffs with the reply
+            console.log(user.style + " " + replys);
+            reply(`${user.style} ${replys}`)
+
+        });
 
         asuna.log(pluginName, pluginVersion, pluginAuthor, false)
-
-
     }
 }
