@@ -19,7 +19,7 @@ module.exports = {
             number = msg.author
         }
 
-        console.log(number)
+        console.log(msg)
 
         db.query(
         `SELECT COUNT(*) AS RowCount FROM Users WHERE number='${number}'`
