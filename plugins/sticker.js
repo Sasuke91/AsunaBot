@@ -10,7 +10,7 @@ module.exports = {
     convert: async function (msg, value, args, user, client, MessageMedia)  {
 
         var asuna = require('./asuna');
-     
+        var isQuote = msg.hasQuotedMsg
         if (!isQuote) return reply("please quote a media")
         msg.react("⌛")
         if (value.length > 1) {
