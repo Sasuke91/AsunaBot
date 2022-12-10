@@ -10,14 +10,19 @@ module.exports = {
     reply: function (msg, value, args)  {
 
         var db = require('./db');
-        var userdetails = require('./user.js');
-        var user = userdetails.details(msg);
+        var user = require('./user.js');
         var asuna = require('./asuna');
+
+
+        user.details(msg, function(user){
+            // returns false or user
+            if (user != false) {
+                msg.reply(user.style+" Hey "+user.username)
+            }
+        });
 
         asuna.log(pluginName, pluginVersion, pluginAuthor, false)
 
-        if (user != false) {
-            msg.reply(user.style+" Hey "+user.username)
-        }
+
     }
 }
