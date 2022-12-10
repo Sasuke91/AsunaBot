@@ -12,7 +12,7 @@ module.exports = {
         var db = require('./db');
         var asuna = require('./asuna');
         var gis = require('g-i-s');
-        
+        var category = "any"
         if (!msg._data.id.remote.includes("@g.us")) return msg.reply (user.style+" this game only works in groups.")
         
         var group = msg._data.id.remote
@@ -75,7 +75,7 @@ module.exports = {
     }, guess: function (msg, value, args, user, client, MessageMedia)  {
 
     if (!msg._data.id.remote.includes("@g.us")) return msg.reply (user.style+" this game only works in groups.")
-    
+    var category = "any"
     var group = msg._data.id.remote
     if (group.includes("-")) {
         group = msg._data.id.remote.split("-")[1]
