@@ -113,13 +113,14 @@ client.on('message', async msg => {
                         var song = require('./plugins/song.js');
                         song.download(msg, value, args, user, client, MessageMedia);
                     break;
-                    case "nsfw":
-                        var song = require('./plugins/nsfw.js');
-                        nsfw.download(msg, value, args, user, client, MessageMedia);
-                    break;
                     case "sfw":
-                        var song = require('./plugins/sfw.js');
+                    case "anime":
+                        var sfw = require('./plugins/sfw.js');
                         sfw.download(msg, value, args, user, client, MessageMedia);
+                    break;
+                    case "nsfw":
+                        var nsfw = require('./plugins/nsfw.js');
+                        nsfw.download(msg, value, args, user, client, MessageMedia);
                     break;
                 }
             }
