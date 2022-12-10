@@ -23,6 +23,10 @@ module.exports = {
             +"\n.slot"
             +"\n.gartic"
             +"\n.translate"
+            +"\n.sticker"
+            +"\n.leaderboard"
+            +"\n.garticboard"
+            +"\n.slotboard"
         )
 
         asuna.log(pluginName, pluginVersion, pluginAuthor, false)

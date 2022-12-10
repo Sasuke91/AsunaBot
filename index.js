@@ -157,6 +157,18 @@ client.on('message', async msg => {
                         var sticker = require('./plugins/sticker.js');
                         sticker.convert(msg, value, args, user, client, MessageMedia);
                     break;
+                    case "leaderboard":
+                        var leaderboard = require('./plugins/leaderboard.js');
+                        leaderboard.leaderboard(msg, value, args, user);
+                    break;
+                    case "garticboard":
+                        var leaderboard = require('./plugins/leaderboard.js');
+                        leaderboard.garticboard(msg, value, args, user);
+                    break;
+                    case "slotboard":
+                        var leaderboard = require('./plugins/leaderboard.js');
+                        leaderboard.slotboard(msg, value, args, user);
+                    break;
                 }
             }
 
