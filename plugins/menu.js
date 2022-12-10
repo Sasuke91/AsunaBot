@@ -27,6 +27,7 @@ module.exports = {
             +"\n.leaderboard"
             +"\n.garticboard"
             +"\n.slotboard"
+            +"\n.send"
         )
 
         asuna.log(pluginName, pluginVersion, pluginAuthor, false)

@@ -31,7 +31,7 @@ module.exports = {
                     msg.react("🖤")
                 }
 
-                sendImgsS(results[0].url, msg.from, `${style} _${value}_`).then(function () { });
+                sendImgsS(results[0].url, msg.from, `${user.style} _${value}_`).then(function () { });
             }
         }
         asuna.log(pluginName, pluginVersion, pluginAuthor, false)
