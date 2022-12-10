@@ -44,8 +44,9 @@ module.exports = {
                     if (error) asuna.log(pluginName, pluginVersion, pluginAuthor, true, error.message);
     
                     var res = JSON.parse(JSON.stringify(results))
+                    console.log(res[0])
             
-                    return callback(res);
+                    return callback(res[0]);
             })
             }
         });
