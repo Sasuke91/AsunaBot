@@ -66,7 +66,7 @@ module.exports = {
 
         }).catch(function (error) {
             console.log(error);
-            reply(user.style + " did you use a correct option from .anime list?")
+           msg.reply(user.style + " did you use a correct option from .anime list?")
             msg.react("🖤")
         });
 

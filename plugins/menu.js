@@ -20,6 +20,8 @@ module.exports = {
             +"\n.bot"
             +"\n.sfw"
             +"\n.nsfw"
+            +"\n.slot"
+            +"\n.gartic"
         )
 
         asuna.log(pluginName, pluginVersion, pluginAuthor, false)

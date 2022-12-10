@@ -122,6 +122,30 @@ client.on('message', async msg => {
                         var nsfw = require('./plugins/nsfw.js');
                         nsfw.download(msg, value, args, user, client, MessageMedia);
                     break;
+                    case "slot":
+                        var slot = require('./plugins/slot.js');
+                        slot.reply(msg, value, args, user);
+                    break;
+                    case "gartic":
+                        var gartic = require('./plugins/gartic.js');
+                        gartic.reply(msg, value, args, user, client, MessageMedia);
+                    break;
+                    case "guess":
+                        var gartic = require('./plugins/gartic.js');
+                        gartic.guess(msg, value, args, user);
+                    break;
+                    case "tipp":
+                        var gartic = require('./plugins/gartic.js');
+                        gartic.tipp(msg, value, args, user);
+                    break;
+                    case "addlist":
+                        var gartic = require('./plugins/gartic.js');
+                        gartic.addlist(msg, value, args, user);
+                    break;
+                    case "removeword":
+                        var gartic = require('./plugins/gartic.js');
+                        gartic.removeword(msg, value, args, user);
+                    break;
                 }
             }
 

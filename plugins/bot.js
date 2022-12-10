@@ -22,7 +22,7 @@ module.exports = {
 
             //Do your stuffs with the reply
             console.log(user.style + " " + replys);
-            msg.reply(`${user.style} ${replys}`)
+           msg.reply(`${user.style} ${replys}`)
 
         });
 
