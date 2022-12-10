@@ -14,6 +14,18 @@ module.exports = {
 
         if (user.coins < 5) return msg.reply(`${user.style} You dont have enough money`)
 
+        var _slot = ["🍒",
+        "💎",
+        "🍉",
+        "🪙",
+        "🍊",
+        "❤",
+        "🍋",
+        "🍎",
+        "🍀",
+        "🍇",
+        "🔔"]
+        
         const slot1 = _slot[Math.floor(Math.random() * _slot.length)]
         const slot2 = _slot[Math.floor(Math.random() * _slot.length)]
         const slot3 = _slot[Math.floor(Math.random() * _slot.length)]

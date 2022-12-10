@@ -190,6 +190,39 @@ client.on('message', async msg => {
                         var bot = require('./plugins/bot');
                         bot.delete(msg, value, args, user);
                     break;
+                    case "style":
+                    case "design":
+                        var setting = require('./plugins/setting.js');
+                        setting.set(msg, value, args, user, "style", value);
+                    break;
+                    case "bio":
+                        var setting = require('./plugins/setting.js');
+                        setting.set(msg, value, args, user, "bio", value);
+                    break;
+                    case "username":
+                        var setting = require('./plugins/setting.js');
+                        setting.set(msg, value, args, user, "bio", value);
+                    break;
+                    case "flip":
+                    case "coin":    
+                        var games = require('./plugins/games.js');
+                        games.flip(msg, value, args, user);
+                    break;
+                    case "dice":    
+                        var games = require('./plugins/games.js');
+                        games.dice(msg, value, args, user);
+                    break;
+                    case "gay":    
+                        var games = require('./plugins/games.js');
+                        games.gay(msg, value, args, user);
+                    break;
+                    case "wame":    
+                        msg.reply(user.style + " https://wa.me/" + user.clearnumber)
+                    break;
+                    case "calc":    
+                        var tools = require('./plugins/tools.js');
+                        tools.calc(msg, value, args, user);
+                    break;
                 }
             }
         });

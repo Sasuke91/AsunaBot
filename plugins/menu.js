@@ -22,12 +22,21 @@ module.exports = {
             +"\n.nsfw"
             +"\n.slot"
             +"\n.gartic"
+            +"\n.flip"
+            +"\n.dice"
+            +"\n.gay"
+            +"\n.wame"
+            +"\n.calc"
             +"\n.translate"
             +"\n.sticker"
             +"\n.leaderboard"
             +"\n.garticboard"
             +"\n.slotboard"
             +"\n.send"
+            +"\n.delete"
+            +"\n.design"
+            +"\n.bio"
+            +"\n.username"
         )
 
         asuna.log(pluginName, pluginVersion, pluginAuthor, false)
