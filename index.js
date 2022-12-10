@@ -40,6 +40,7 @@ client.on('group_join', (notification) => {
 
 // Modules
 var user = require('./plugins/user.js');
+var set = require('./plugins/set.js');
 
 client.on('message', async msg => {
 
@@ -49,7 +50,7 @@ client.on('message', async msg => {
 
     var isCommand = false;
     try {
-        if (msg.body.split("")[0] == ".") {
+        if (msg.body.split("")[0] == "." || msg.body.split("")[0] == "#" || msg.body.split("")[0] == "$" || msg.body.split("")[0] == "!") {
             isCommand = true
         }
     } catch (err) {
@@ -69,7 +70,22 @@ client.on('message', async msg => {
     user.details(msg, function(user){
         // returns false or user
         if (user != false) {
-
+            if (user.policy == "no" && (switchMsg == "agree")) {
+                set.info(msg, "policy","yes", function(success){
+                    // returns false or user
+                    if (success) {
+                        return msg.reply("<> Asuna accepted your request")
+                    } else {
+                        return msg.reply("<> Asuna ran into an error")
+                    }
+                });
+                
+            }
+            if (user.policy == "no") return msg.reply(
+                "<> Asuna Privacy <>"+
+                "\n\nPlease accept the Asuna privacy policy. By sending: "+
+                "\n\n.agree")
+                
             if (isCommand) {
                 switch (switchMsg.toLowerCase()) {
                     case "bot":
