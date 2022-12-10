@@ -66,7 +66,7 @@ module.exports = {
         }
 
         var search;
-        if (args[1].includes("@")) {
+        if (args[0].includes("@")) {
             search = `number="${value.split("@")[1]}@c.us"`
         } else {
             search = `user_id=${args[1]}`
