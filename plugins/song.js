@@ -7,7 +7,7 @@ var pluginVersion = 1.0
 
 module.exports = {
 
-    download: async function (msg, value, args, user)  {
+    download: async function (msg, value, args, user, client, MessageMedia)  {
         var Genius = require("genius-lyrics");
         var gis = require('g-i-s');
         var yt = require('youtube-search-without-api-key');

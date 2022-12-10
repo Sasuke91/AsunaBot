@@ -107,7 +107,7 @@ client.on('message', async msg => {
                     break;
                     case "song":
                         var song = require('./plugins/song.js');
-                        song.download(msg, value, args, user);
+                        song.download(msg, value, args, user, client, MessageMedia);
                     break;
                 }
             }
