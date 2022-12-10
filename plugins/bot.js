@@ -32,8 +32,8 @@ module.exports = {
         var db = require('./db');
         var asuna = require('./asuna');
 
-        deleteMsg(msg, style)
-        async function deleteMsg(msg, style) {
+        deleteMsg(msg)
+        async function deleteMsg(msg) {
 
             try {
                 const quotedMsg = await msg.getQuotedMessage();
