@@ -18,6 +18,13 @@ module.exports = {
             user.details(msg, function(user){
                 // returns false or user
                 if (user != false) {
+                    msg.reply(user.style+" Hey "+user.username)
+                }
+            });
+
+            /*user.details(msg, function(user){
+                // returns false or user
+                if (user != false) {
                 asuna.format(user.date, function(date){
                     // returns formated date
                     msg.reply(
@@ -34,7 +41,7 @@ module.exports = {
                     )
                 });
             }
-            });
+            });*/
 
         } else {
 
