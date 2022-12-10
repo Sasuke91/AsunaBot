@@ -8,7 +8,7 @@ process.on('uncaughtException', err => {
 });
 
 const client = new Client({
-  authStrategy: new LocalAuth(),
+    authStrategy: new LocalAuth({ clientId: "client-one" })
 });
 //  puppeteer: { executablePath: '/usr/bin/google-chrome-stable', headless: false, 	args: ['--no-sandbox'], }
 
