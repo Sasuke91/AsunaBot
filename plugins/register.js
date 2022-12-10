@@ -7,7 +7,7 @@ var pluginVersion = 1.0
 
 module.exports = {
 
-    insert: async function (msg, value, args, user)  {
+    insert: async function (msg, value, args, user, client)  {
 
         var db = require('./db');
         var user = require('./user.js');

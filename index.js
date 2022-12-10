@@ -73,7 +73,7 @@ client.on('message', async msg => {
         if (user != false) {
             if (switchMsg == "register") {
                 var register = require('./plugins/register');
-                register.insert(msg, value, args, user);
+                register.insert(msg, value, args, user, client);
             }
             if (user.policy == "no" && (switchMsg == "agree")) {
                 set.info(msg, "policy","yes", function(success){
@@ -168,6 +168,10 @@ client.on('message', async msg => {
                     case "slotboard":
                         var leaderboard = require('./plugins/leaderboard.js');
                         leaderboard.slotboard(msg, value, args, user);
+                    break;
+                    case "send":
+                        var send = require('./plugins/send.js');
+                        send.download(msg, value, args, user, client, MessageMedia);
                     break;
                 }
             }
