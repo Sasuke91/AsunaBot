@@ -7,7 +7,7 @@ var pluginVersion = 1.0
 
 module.exports = {
 
-    convert: async function (msg, value, args, user, client, MessageMedia)  {
+    download: async function (msg, value, args, user, client, MessageMedia)  {
 
         var asuna = require('./asuna');
 
