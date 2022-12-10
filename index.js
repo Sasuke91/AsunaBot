@@ -150,7 +150,7 @@ client.on('message', async msg => {
                     case "translate":
                     case "tl":
                         var translate = require('./plugins/translate.js');
-                        translate.tl(msg, value, args, user);
+                        translate.reply(msg, value, args, user);
                     break;
                     case "sticker":
                     case "s":
