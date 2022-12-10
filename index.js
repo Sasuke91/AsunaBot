@@ -39,14 +39,41 @@ client.on('group_join', (notification) => {
 });
 
 client.on('message', async msg => {
-    var value = msg.body;
-    var args = value.split(" ");
 
-    switch (args[0].toLowerCase()) {
-        case "bot":
-            var bot = require('./plugins/bot');
-            bot.reply(msg, value, args);
-        break;
+    var value = removeFirstWord(msg.body)
+
+    var args = msg.body.split(" ")
+
+    var isCommand = false;
+    try {
+        if (msg.body.split("")[0] == ".") {
+            isCommand = true
+        }
+    } catch (err) {
+
+    }
+
+    var switchMsg;
+    if (msg.body.split("")[1] == " ") {
+        var sub = removeFirstWord(msg.body.slice(2))
+        var args = sub.split(" ")
+        switchMsg = msg.body.slice(2).split(" ")[0]
+    } else {
+        switchMsg = msg.body.slice(1).split(" ")[0]
+    }
+
+    if (isCommand) {
+        switch (switchMsg.toLowerCase()) {
+            case "bot":
+                var bot = require('./plugins/bot');
+                bot.reply(msg, value, args);
+            break;
+            case "me":
+            case "user":
+                var me = require('./plugins/me.js');
+                me.reply(msg, value, args);
+            break;
+        }
     }
 });
 
@@ -57,3 +84,13 @@ process.on("SIGINT", async () => {
 })
 
 client.initialize();
+
+function removeFirstWord(str) {
+    const indexOfSpace = str.indexOf(' ');
+
+    if (indexOfSpace === -1) {
+        return '';
+    }
+
+    return str.substring(indexOfSpace + 1);
+}
