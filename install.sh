@@ -6,3 +6,4 @@ npm i alexa-bot-api-v4
 npm i g-i-s
 npm i genius-lyrics
 npm i youtube-search-without-api-key
+npm i get-json

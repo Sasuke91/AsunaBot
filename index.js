@@ -105,9 +105,21 @@ client.on('message', async msg => {
                         var userinfo = require('./plugins/userinfo.js');
                         userinfo.reply(msg, value, args, user);
                     break;
+                    case "menu":
+                        var menu = require('./plugins/menu.js');
+                        menu.reply(msg, value, args, user);
+                    break;
                     case "song":
                         var song = require('./plugins/song.js');
                         song.download(msg, value, args, user, client, MessageMedia);
+                    break;
+                    case "nsfw":
+                        var song = require('./plugins/nsfw.js');
+                        nsfw.download(msg, value, args, user, client, MessageMedia);
+                    break;
+                    case "sfw":
+                        var song = require('./plugins/sfw.js');
+                        sfw.download(msg, value, args, user, client, MessageMedia);
                     break;
                 }
             }
