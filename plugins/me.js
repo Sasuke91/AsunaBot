@@ -13,8 +13,6 @@ module.exports = {
         var user = require('./user.js');
         var asuna = require('./asuna');
 
-   
-
             user.details(msg, function(user){
                 // returns false or user
                 if (user != false) {
@@ -35,7 +33,6 @@ module.exports = {
                 });
             }
             });
-
 
         asuna.log(pluginName, pluginVersion, pluginAuthor, false)
     }

@@ -70,8 +70,11 @@ client.on('message', async msg => {
                 bot.reply(msg, value, args);
             break;
             case "me":
-            case "user":
                 var me = require('./plugins/me.js');
+                me.reply(msg, value, args);
+            break;
+            case "user":
+                var me = require('./plugins/userinfo.js');
                 me.reply(msg, value, args);
             break;
         }
