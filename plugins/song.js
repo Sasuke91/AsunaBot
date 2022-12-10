@@ -13,7 +13,6 @@ module.exports = {
         var yt = require('youtube-search-without-api-key');
 
         var db = require('./db');
-        var user = require('./user.js');
         var asuna = require('./asuna');
         var { exec } = require('child_process');
         
@@ -39,7 +38,7 @@ module.exports = {
                 try {
                     const mediaLink = await MessageMedia.fromUrl(link);
                     client.sendMessage(number, mediaLink, { caption: text }).then(function (res) { }).catch(function (err) { });
-                    sendImgs(results[0].url, msg.from, `${user.style} _${videos[0].title}_\n💎 _${videos[0].duration_raw}_ min`).then(function () { });
+                    sendImgs(results[0].url, msg.from, `${user.style} `+value).then(function () { });
                 } catch (err) {
                     msg.reply(`${user.style} _${videos[0].title}_\n💎 _${videos[0].duration_raw}_ min`)
                 }
