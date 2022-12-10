@@ -61,6 +61,7 @@ client.on('message', async msg => {
     } else {
         switchMsg = msg.body.slice(1).split(" ")[0]
     }
+    console.log(switchMsg)
 
     if (isCommand) {
         switch (switchMsg.toLowerCase()) {
