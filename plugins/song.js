@@ -63,12 +63,12 @@ module.exports = {
 
                 if (err) return reply(`${user.style} Error\n\n\n` + err.message)
 
-                sendMediaAudio(ran, style + ' Heres your song').then(function () { });
+                sendMediaAudio(ran, user.style + ' Heres your song').then(function () { });
 
                 async function sendMediaAudio(path, text) {
                     try {
 
-                        const Audio = await MessageMedia.fromFilePath(ran);
+                        const Audio = await MessageMedia.fromFilePath(path);
                         client.sendMessage(msg.from, Audio, { caption: value }).then(function (res) { msg.react("✅") }).catch(function (err) {
                             msg.reply(`${user.style} Error\n\n\n` + err.message)
                             msg.react("❌")
