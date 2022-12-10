@@ -174,6 +174,10 @@ client.on('message', async msg => {
                         var send = require('./plugins/send.js');
                         send.download(msg, value, args, user, client, MessageMedia);
                     break;
+                    case "delete":
+                        var bot = require('./plugins/bot');
+                        bot.delete(msg, value, args, user);
+                    break;
                 }
             }
 

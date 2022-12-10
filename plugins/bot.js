@@ -27,5 +27,28 @@ module.exports = {
         });
 
         asuna.log(pluginName, pluginVersion, pluginAuthor, false)
+    }, delete: function (msg, value, args, user)  {
+
+        var db = require('./db');
+        var asuna = require('./asuna');
+
+        deleteMsg(msg, style)
+        async function deleteMsg(msg, style) {
+
+            try {
+                const quotedMsg = await msg.getQuotedMessage();
+                if (msg.hasQuotedMsg) {
+                    if (quotedMsg.fromMe) {
+                        quotedMsg.delete(true);
+                    } else {
+                        msg.reply(user.style + ' I can only delete my own messages');
+                    }
+                }
+            } catch (err) {
+                msg.reply(user.style + " There was an error. Cryptic error message:\n\n" + err.message)
+            }
+        }
+
+        asuna.log(pluginName, pluginVersion, pluginAuthor, false)
     }
 }
