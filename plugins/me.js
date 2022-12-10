@@ -14,7 +14,7 @@ module.exports = {
         var asuna = require('./asuna');
 
         var finalUser;
-        if (args.lenght() < 1) {
+        if (args.length() < 1) {
 
             user.details(msg, function(user){
                 // returns false or user
