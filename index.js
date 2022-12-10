@@ -1,5 +1,6 @@
 // AsunaBot
 // set wait_timeout=28800
+// 120363025552539160@g.us - announcement group
 
 const { Client, LocalAuth, Location, List, Buttons, MessageMedia, NoAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
