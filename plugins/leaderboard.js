@@ -20,7 +20,7 @@ module.exports = {
                 if (error) console.log(error.message);
                 leaderboard(JSON.parse(JSON.stringify(results)))
                 async function leaderboard(res) {
-                    var leaderboard = user.style + " Asuna Leaderboard\n";
+                    var leaderboard = user.style + "Asuna Leaderboard\n";
                     var position = 0
                     for (const item of res.values()) {
                         position++
@@ -41,6 +41,31 @@ module.exports = {
         
         asuna.log(pluginName, pluginVersion, pluginAuthor, false)
     }, slotboard: function (msg, value, args, user)  {
+
+        var db = require('./db');
+        var asuna = require('./asuna');
+
+        db.query(
+            `SELECT *
+                        FROM Users WHERE slot_points > 0
+                        ORDER BY slot_points DESC`
+            , function (error, results, fields) {
+                if (error) console.log(error.message);
+                garticLeaderboard(JSON.parse(JSON.stringify(results)))
+                async function garticLeaderboard(res) {
+                    var leaderboard = user.style + " Slot leaderboard\n";
+                    var position = 0
+                    for (const item of res.values()) {
+                        position++
+                        leaderboard += "\n " + position + ". " + JSON.stringify(item.style) + " " + JSON.stringify(item.username) + " " + JSON.stringify(item.slot_points) + " points"
+
+                    }
+
+                    msg.reply(leaderboard.replace(/["]+/g, ''));
+                }
+            });
+        asuna.log(pluginName, pluginVersion, pluginAuthor, false)
+    }, garticboard: function (msg, value, args, user)  {
 
         var db = require('./db');
         var asuna = require('./asuna');
