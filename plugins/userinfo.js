@@ -7,7 +7,7 @@ var pluginVersion = 1.0
 
 module.exports = {
 
-    reply: function (msg, value, args)  {
+    reply: function (msg, value, args, user)  {
 
         var db = require('./db');
         var user = require('./user.js');

@@ -38,6 +38,9 @@ client.on('group_join', (notification) => {
 
 });
 
+// Modules
+var user = require('./user.js');
+
 client.on('message', async msg => {
 
     var value = removeFirstWord(msg.body)
@@ -63,22 +66,29 @@ client.on('message', async msg => {
     }
     console.log(switchMsg)
 
-    if (isCommand) {
-        switch (switchMsg.toLowerCase()) {
-            case "bot":
-                var bot = require('./plugins/bot');
-                bot.reply(msg, value, args);
-            break;
-            case "me":
-                var me = require('./plugins/me.js');
-                me.reply(msg, value, args);
-            break;
-            case "user":
-                var me = require('./plugins/userinfo.js');
-                me.reply(msg, value, args);
-            break;
+    user.details(msg, function(user){
+        // returns false or user
+        if (user != false) {
+
+            if (isCommand) {
+                switch (switchMsg.toLowerCase()) {
+                    case "bot":
+                        var bot = require('./plugins/bot');
+                        bot.reply(msg, value, args, user);
+                    break;
+                    case "me":
+                        var me = require('./plugins/me.js');
+                        me.reply(msg, value, args, user);
+                    break;
+                    case "user":
+                        var me = require('./plugins/userinfo.js');
+                        me.reply(msg, value, args, user);
+                    break;
+                }
+            }
+
         }
-    }
+    });
 });
 
 process.on("SIGINT", async () => {
