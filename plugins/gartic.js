@@ -84,6 +84,15 @@ module.exports = {
         group = msg._data.id.remote.split("-")[1]
     }
 
+    var number;
+    if (msg.author == "undefined") {
+        number = msg.from
+    } else if (msg.author == undefined) {
+        number = msg.from
+    } else {
+        number = msg.author
+    }
+
     if (args.length < 2) return msg.reply(`${user.style} Please enter guess.\n\nExample: .guess horse`)
     if (args.length > 2) return msg.reply(`${user.style} Please enter only 1 word.\n\nExample: .guess horse`)
 
@@ -241,6 +250,15 @@ module.exports = {
         var db = require('./db');
         var asuna = require('./asuna');
 
+        var number;
+        if (msg.author == "undefined") {
+            number = msg.from
+        } else if (msg.author == undefined) {
+            number = msg.from
+        } else {
+            number = msg.author
+        }
+
         if (5 > Number(user.coins)) return msg.reply(user.style + " you dont have enough money to buy a tip. Your balence: " + user.coins + "$")
 
         if (!msg._data.id.remote.includes("@g.us")) return msg.reply (user.style+" this game only works in groups.")
@@ -361,7 +379,7 @@ module.exports = {
     }, removeword: function (msg, value, args, user)  {
         var db = require('./db');
         var asuna = require('./asuna');
-        
+
             if (!msg._data.id.remote.includes("@g.us")) return msg.reply (user.style+" this game only works in groups.")
         
             var group = msg._data.id.remote
