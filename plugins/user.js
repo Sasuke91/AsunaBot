@@ -8,7 +8,7 @@ var pluginName = "user"
 var pluginVersion = 1.0
 
 module.exports = {
-    details: function (msg) {
+    details: function (msg, callback) {
 
         var db = require('./db');
         var asuna = require('./asuna');
