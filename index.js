@@ -5,6 +5,18 @@
 const { Client, LocalAuth, Location, List, Buttons, MessageMedia, NoAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 
+setTimeout(function () {
+    console.log("setting timeout");
+    process.on("exit", function () {
+        require("child_process").spawn(process.argv.shift(), process.argv, {
+            cwd: process.cwd(),
+            detached : true,
+            stdio: "inherit"
+        });
+    });
+    process.exit();
+}, 60 * 100 * 10 * 30 * 4);
+
 process.on('uncaughtException', err => {
     console.error(err && err.stack)
 });
@@ -68,14 +80,14 @@ client.on('message', async msg => {
         switchMsg = msg.body.slice(1).split(" ")[0]
     }
     console.log(switchMsg)
-
+    if (isCommand) {
     user.details(msg, function(user){
         // returns false or user
+        if (switchMsg == "register" && (user == false)) {
+            var register = require('./plugins/register');
+            register.insert(msg, value, args, user, client);
+        }
         if (user != false) {
-            if (switchMsg == "register") {
-                var register = require('./plugins/register');
-                register.insert(msg, value, args, user, client);
-            }
             if (user.policy == "no" && (switchMsg == "agree")) {
                 set.info(msg, "policy","yes", function(success){
                     // returns false or user
@@ -92,7 +104,7 @@ client.on('message', async msg => {
                 "\n\nPlease accept the Asuna privacy policy. By sending: "+
                 "\n\n.agree")
                 
-            if (isCommand) {
+         
                 switch (switchMsg.toLowerCase()) {
                     case "bot":
                     case "asuna":
@@ -180,9 +192,8 @@ client.on('message', async msg => {
                     break;
                 }
             }
-
-        }
-    });
+        });
+    }
 });
 
 process.on("SIGINT", async () => {
