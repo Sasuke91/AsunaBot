@@ -4,9 +4,6 @@ description: get user information
 author: Feuerherz
 version 1.0*/
 
-var pluginName = "user"
-var pluginVersion = 1.0
-
 module.exports = {
     details: function (msg, callback) {
 
@@ -25,7 +22,7 @@ module.exports = {
         db.query(
         `SELECT COUNT(*) AS RowCount FROM Users WHERE number='${number}'`
         , function (error, results, fields) {
-            if (error) asuna.log(pluginName, pluginVersion, pluginAuthor, true, error.message);
+            if (error) console.log(error.message);
           
             if (Number(results[0].RowCount) < 1) {
 
@@ -41,7 +38,7 @@ module.exports = {
                 WHERE number="${number}"`
     
                 , function (error, results, fields) {
-                    if (error) asuna.log(pluginName, pluginVersion, pluginAuthor, true, error.message);
+                    if (error) console.log(error.message);
     
                     var res = JSON.parse(JSON.stringify(results))
                     console.log(res[0])
@@ -75,7 +72,7 @@ module.exports = {
         db.query(
         `SELECT COUNT(*) AS RowCount FROM Users WHERE `+search
         , function (error, results, fields) {
-            if (error) asuna.log(pluginName, pluginVersion, pluginAuthor, true, error.message);
+            if (error) console.log(error.message);
           
             if (Number(results[0].RowCount) < 1) {
 
@@ -91,7 +88,7 @@ module.exports = {
                 WHERE `+search
     
                 , function (error, results, fields) {
-                    if (error) asuna.log(pluginName, pluginVersion, pluginAuthor, true, error.message);
+                    if (error) console.log(error.message);
     
                     var res = JSON.parse(JSON.stringify(results))
                     console.log(res[0])
