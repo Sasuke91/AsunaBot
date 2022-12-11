@@ -8,7 +8,7 @@ var pluginVersion = 1.0
 module.exports = {
 
     set: function (msg, value, args, user, target, replacement)  {
-        var set = require('./plugins/set.js');
+        var set = require('./set.js');
         var db = require('./db');
         var asuna = require('./asuna');
 

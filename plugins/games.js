@@ -8,7 +8,7 @@ var pluginVersion = 1.0
 module.exports = {
 
     flip: function (msg, value, args, user)  {
-        var set = require('./plugins/set.js');
+        var set = require('./set.js');
         var db = require('./db');
         var asuna = require('./asuna');
 
@@ -25,7 +25,7 @@ module.exports = {
       
         asuna.log(pluginName, pluginVersion, pluginAuthor, false)
     }, dice: function (msg, value, args, user)  {
-        var set = require('./plugins/set.js');
+        var set = require('./set.js');
         var db = require('./db');
         var asuna = require('./asuna');
 
@@ -37,7 +37,7 @@ module.exports = {
       
         asuna.log(pluginName, pluginVersion, pluginAuthor, false)
     }, gay: function (msg, value, args, user)  {
-        var set = require('./plugins/set.js');
+        var set = require('./set.js');
         var db = require('./db');
         var asuna = require('./asuna');
 
