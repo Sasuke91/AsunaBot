@@ -7,7 +7,7 @@ var pluginVersion = 1.0
 
 module.exports = {
 
-    calc: function (msg, value, args, user, target, replacement)  {
+    calc: function (msg, value, args, user)  {
         var db = require('./db');
         var asuna = require('./asuna');
 
