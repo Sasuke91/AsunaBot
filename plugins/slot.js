@@ -142,7 +142,7 @@ ${slot4}${slot5}${slot6}
 - - - - - - - - - \n${slot7}${slot8}${slot9}
 
 you ${looseorwin} ${winAmount}$!
-you have $${coins + winAmount} left!`)
+you have $${user.coins + winAmount} left!`)
 
                         db.query(
                             `DELETE FROM Slot WHERE number="${number}"`
