@@ -7,7 +7,7 @@ var pluginVersion = 1.0
 
 module.exports = {
 
-    reply: function () {
+    clear: function () {
 
         var db = require('./db');
         var asuna = require('./asuna');
