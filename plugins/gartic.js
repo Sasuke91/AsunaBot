@@ -268,7 +268,7 @@ module.exports = {
             group = msg._data.id.remote.split("-")[1]
         }
 
-        connection.query( // get the users stuff
+        db.query( // get the users stuff
             `SELECT COUNT(*) AS RowCount FROM Gartic WHERE group_id="${group}"`
             , function (error, results, fields) {
                 if (Number(results[0].RowCount) < 1) {
@@ -345,7 +345,7 @@ module.exports = {
                 wordsNotAllowed++
             } else {
 
-                connection.query(
+                db.query(
                     `SELECT COUNT(*) AS RowCount FROM Words WHERE word='${newword}'`
                     , function (error, results, fields) {
                         console.log(results[0].RowCount)
@@ -353,7 +353,7 @@ module.exports = {
                         if (amount > 0) {
 
                         } else {
-                            connection.query( // save message
+                            db.query( // save message
                                 `INSERT into Words (word, creator_id, category) 
                             VALUES ("${newword}","${id}", "${category}")`
                                 , function (error, results, fields) {

@@ -26,17 +26,16 @@ module.exports = {
             +"\n.dice"
             +"\n.gay"
             +"\n.wame"
-            +"\n.calc"
             +"\n.translate"
             +"\n.sticker"
             +"\n.leaderboard"
             +"\n.garticboard"
             +"\n.slotboard"
-            +"\n.send"
+            +"\n.send < search >"
             +"\n.delete"
-            +"\n.design"
-            +"\n.bio"
-            +"\n.username"
+            +"\n.design < emojie >"
+            +"\n.bio < bio >"
+            +"\n.username < name >"
         )
 
         asuna.log(pluginName, pluginVersion, pluginAuthor, false)

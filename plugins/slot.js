@@ -7,7 +7,7 @@ var pluginVersion = 1.0
 
 module.exports = {
 
-    reply: function (msg, value, args, user)  {
+    reply: function (msg, value, args, user) {
 
         var db = require('./db');
         var asuna = require('./asuna');
@@ -15,17 +15,17 @@ module.exports = {
         if (user.coins < 5) return msg.reply(`${user.style} You dont have enough money`)
 
         var _slot = ["🍒",
-        "💎",
-        "🍉",
-        "🪙",
-        "🍊",
-        "❤",
-        "🍋",
-        "🍎",
-        "🍀",
-        "🍇",
-        "🔔"]
-        
+            "💎",
+            "🍉",
+            "🪙",
+            "🍊",
+            "❤",
+            "🍋",
+            "🍎",
+            "🍀",
+            "🍇",
+            "🔔"]
+
         const slot1 = _slot[Math.floor(Math.random() * _slot.length)]
         const slot2 = _slot[Math.floor(Math.random() * _slot.length)]
         const slot3 = _slot[Math.floor(Math.random() * _slot.length)]
@@ -55,12 +55,12 @@ module.exports = {
 
                 } else {
                     db.query( // save message 
-                    `INSERT INTO Slot (number) VALUES ("${number}")`
-                    , function (error, results, fields) {
-                        if (error) {
-                            console.log(error.message)
-                        }
-                    });
+                        `INSERT INTO Slot (number) VALUES ("${number}")`
+                        , function (error, results, fields) {
+                            if (error) {
+                                console.log(error.message)
+                            }
+                        });
 
                     var winmsg;
                     var winAmount;
@@ -79,7 +79,7 @@ module.exports = {
                                 if (error) {
                                     console.log(error.message);
                                 }
-                        });
+                            });
 
                     } else if (slot1 == slot2) {
                         winmsg = "small win"
@@ -90,7 +90,7 @@ module.exports = {
                                 if (error) {
                                     console.log(error.message);
                                 }
-                        });
+                            });
                     } else if (slot2 == slot3) {
                         winmsg = "small win"
                         winAmount = 13
@@ -108,7 +108,8 @@ module.exports = {
                             `UPDATE Users SET slot_points = slot_points + 1 WHERE number='${number}'`
                             , function (error, results, fields) {
                                 if (error) {
-                                    console.log(error.message);                              }
+                                    console.log(error.message);
+                                }
                             });
                     } else {
                         winmsg = "you lost"
@@ -126,7 +127,7 @@ module.exports = {
                         `UPDATE Users SET coins = "${user.coins + winAmount}", xp = xp + 2 WHERE number='${number}'`
                         , function (error, results, fields) {
                             if (error) console.log(error.message);
-                    });
+                        });
 
                     var delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -134,20 +135,20 @@ module.exports = {
                     codeSlot()
                     async function codeSlot() {
                         await delay(1000);
-msg.reply(user.style + ` 𝚂𝚕𝚘𝚝s
+                        msg.reply(user.style + ` 𝚂𝚕𝚘𝚝s
 
 ${slot4}${slot5}${slot6}
 - - - - - - - - - \n${slot1}${slot2}${slot3} ☜︎ ${winmsg} ♕︎
 - - - - - - - - - \n${slot7}${slot8}${slot9}
 
 you ${looseorwin} ${winAmount}$!
-you have $${coins + winAmount} left!`) 
+you have $${coins + winAmount} left!`)
 
                         db.query(
                             `DELETE FROM Slot WHERE number="${number}"`
                             , function (error, results, fields) {
                                 if (error) msg.reply("there was error deleting the session\n\n" + error.message);
-                        });
+                            });
 
                     }
 

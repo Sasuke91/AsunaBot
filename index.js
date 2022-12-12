@@ -10,7 +10,7 @@ setTimeout(function () {
     process.on("exit", function () {
         require("child_process").spawn(process.argv.shift(), process.argv, {
             cwd: process.cwd(),
-            detached : true,
+            detached: true,
             stdio: "inherit"
         });
     });
@@ -45,6 +45,9 @@ client.on('auth_failure', msg => {
 
 client.on('ready', () => {
     console.log('Client is ready!');
+
+    var restart = require('./plugins/restart.js');
+    restart.clear();
 });
 
 
@@ -81,148 +84,148 @@ client.on('message', async msg => {
     }
     console.log(switchMsg)
     if (isCommand) {
-    user.details(msg, function(user){
-        // returns false or user
-        if (switchMsg == "register" && (user == false)) {
-            var register = require('./plugins/register');
-            register.insert(msg, value, args, user, client);
-        }
-        if (user != false) {
-            if (user.policy == "no" && (switchMsg == "agree")) {
-                set.info(msg, "policy","yes", function(success){
-                    // returns false or user
-                    if (success) {
-                        return msg.reply("<> Asuna accepted your request")
-                    } else {
-                        return msg.reply("<> Asuna ran into an error")
-                    }
-                });
-                
+        user.details(msg, function (user) {
+            // returns false or user
+            if (switchMsg == "register" && (user == false)) {
+                var register = require('./plugins/register');
+                register.insert(msg, value, args, user, client);
             }
-            if (user.policy == "no") return msg.reply(
-                "<> Asuna Privacy <>"+
-                "\n\nPlease accept the Asuna privacy policy. By sending: "+
-                "\n\n.agree")
-                
-         
+            if (user != false) {
+                if (user.policy == "no" && (switchMsg == "agree")) {
+                    set.info(msg, "policy", "yes", function (success) {
+                        // returns false or user
+                        if (success) {
+                            return msg.reply("<> Asuna accepted your request")
+                        } else {
+                            return msg.reply("<> Asuna ran into an error")
+                        }
+                    });
+
+                }
+                if (user.policy == "no") return msg.reply(
+                    "<> Asuna Privacy <>" +
+                    "\n\nPlease accept the Asuna privacy policy. By sending: " +
+                    "\n\n.agree")
+
+
                 switch (switchMsg.toLowerCase()) {
                     case "bot":
                     case "asuna":
                         var bot = require('./plugins/bot');
                         bot.reply(msg, value, args, user);
-                    break;
+                        break;
                     case "me":
                         var me = require('./plugins/me.js');
                         me.reply(msg, value, args, user);
-                    break;
+                        break;
                     case "user":
                         var userinfo = require('./plugins/userinfo.js');
                         userinfo.reply(msg, value, args, user);
-                    break;
+                        break;
                     case "menu":
                         var menu = require('./plugins/menu.js');
                         menu.reply(msg, value, args, user);
-                    break;
+                        break;
                     case "song":
                         var song = require('./plugins/song.js');
                         song.download(msg, value, args, user, client, MessageMedia);
-                    break;
+                        break;
                     case "sfw":
                     case "anime":
                         var sfw = require('./plugins/sfw.js');
                         sfw.download(msg, value, args, user, client, MessageMedia);
-                    break;
+                        break;
                     case "nsfw":
                         var nsfw = require('./plugins/nsfw.js');
                         nsfw.download(msg, value, args, user, client, MessageMedia);
-                    break;
+                        break;
                     case "slot":
                         var slot = require('./plugins/slot.js');
                         slot.reply(msg, value, args, user);
-                    break;
+                        break;
                     case "gartic":
                         var gartic = require('./plugins/gartic.js');
                         gartic.reply(msg, value, args, user, client, MessageMedia);
-                    break;
+                        break;
                     case "guess":
                         var gartic = require('./plugins/gartic.js');
                         gartic.guess(msg, value, args, user);
-                    break;
+                        break;
                     case "tipp":
                         var gartic = require('./plugins/gartic.js');
                         gartic.tipp(msg, value, args, user);
-                    break;
+                        break;
                     case "addlist":
                         var gartic = require('./plugins/gartic.js');
                         gartic.addlist(msg, value, args, user);
-                    break;
+                        break;
                     case "removeword":
                         var gartic = require('./plugins/gartic.js');
                         gartic.removeword(msg, value, args, user);
-                    break;
+                        break;
                     case "translate":
                     case "tl":
                         var translate = require('./plugins/translate.js');
                         translate.reply(msg, value, args, user);
-                    break;
+                        break;
                     case "sticker":
                     case "s":
                         var sticker = require('./plugins/sticker.js');
                         sticker.convert(msg, value, args, user, client, MessageMedia);
-                    break;
+                        break;
                     case "leaderboard":
                         var leaderboard = require('./plugins/leaderboard.js');
                         leaderboard.leaderboard(msg, value, args, user);
-                    break;
+                        break;
                     case "garticboard":
                         var leaderboard = require('./plugins/leaderboard.js');
                         leaderboard.garticboard(msg, value, args, user);
-                    break;
+                        break;
                     case "slotboard":
                         var leaderboard = require('./plugins/leaderboard.js');
                         leaderboard.slotboard(msg, value, args, user);
-                    break;
+                        break;
                     case "send":
                         var send = require('./plugins/send.js');
                         send.download(msg, value, args, user, client, MessageMedia);
-                    break;
+                        break;
                     case "delete":
                         var bot = require('./plugins/bot');
                         bot.delete(msg, value, args, user);
-                    break;
+                        break;
                     case "style":
                     case "design":
                         var setting = require('./plugins/setting.js');
                         setting.set(msg, value, args, user, "style", value);
-                    break;
+                        break;
                     case "bio":
                         var setting = require('./plugins/setting.js');
                         setting.set(msg, value, args, user, "bio", value);
-                    break;
+                        break;
                     case "username":
                         var setting = require('./plugins/setting.js');
-                        setting.set(msg, value, args, user, "bio", value);
-                    break;
+                        setting.set(msg, value, args, user, "username", value);
+                        break;
                     case "flip":
-                    case "coin":    
+                    case "coin":
                         var games = require('./plugins/games.js');
                         games.flip(msg, value, args, user);
-                    break;
-                    case "dice":    
+                        break;
+                    case "dice":
                         var games = require('./plugins/games.js');
                         games.dice(msg, value, args, user);
-                    break;
-                    case "gay":    
+                        break;
+                    case "gay":
                         var games = require('./plugins/games.js');
                         games.gay(msg, value, args, user);
-                    break;
-                    case "wame":    
+                        break;
+                    case "wame":
                         msg.reply(user.style + " https://wa.me/" + user.clearnumber)
-                    break;
-                    case "calc":    
+                        break;
+                    case "calc":
                         var tools = require('./plugins/tools.js');
                         tools.calc(msg, value, args, user);
-                    break;
+                        break;
                 }
             }
         });
