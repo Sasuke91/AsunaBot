@@ -49,7 +49,7 @@ module.exports = {
         getJSON(`https://api.genderize.io/?name=${args[1]}`, function (error, res) {
             console.log(res);
 
-            reply(`- - - - - - - - - - - - - - - - - -
+            msg.reply(`- - - - - - - - - - - - - - - - - -
 👻 𝐺𝑒𝑛𝑑𝑒𝑟 ⌖ _${res.gender}_
 - - - - - - - - - - - - - - - - - -
 🧾 𝐴𝑐𝑐𝑢𝑟𝑎𝑐𝑦 ⌖ _${res.probability}_
