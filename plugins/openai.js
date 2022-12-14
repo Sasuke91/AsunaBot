@@ -33,7 +33,7 @@ module.exports = {
                   
                   console.log (image_url)
 
-                  var mediaLink = await MessageMedia.fromUrl(url);
+                  var mediaLink = await MessageMedia.fromUrl(imageurl);
                   client.sendMessage(msg.from, mediaLink, { caption: "Generation complete :). Total cost: 20$. You now have "+user.coins-20+"$ left" }).then(function (res) { }).catch(function (err) { });
                   msg.react("🖤")
 
