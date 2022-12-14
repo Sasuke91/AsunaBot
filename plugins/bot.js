@@ -56,7 +56,7 @@ module.exports = {
         var asuna = require('./asuna');
 
         var yourDate = new Date()
-        if (last_claim == yourDate.toISOString().split('T')[0]) return msg.reply(user.style + " already claimed today")
+        if (user.last_claim == yourDate.toISOString().split('T')[0]) return msg.reply(user.style + " already claimed today")
 
         db.query(
             `UPDATE Users SET coins = coins + 25, xp = xp + 10, last_claim = "${yourDate.toISOString().split('T')[0]}" WHERE user_id=${user.user_id}`
