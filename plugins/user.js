@@ -28,8 +28,10 @@ module.exports = {
           
             if (Number(results[0].RowCount) < 1) {
 
-                msg.reply("please register to continue")
-
+                if (msg.body != ".register") {
+                    msg.reply("Please register to continue. You can register by sending the message:\n\n.register")
+                }
+            
                 return callback(false);
 
             } else {

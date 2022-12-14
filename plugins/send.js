@@ -11,7 +11,7 @@ module.exports = {
 
         var asuna = require('./asuna');
 
-        if (value.includes("sex ") || value.includes("porn") || value.includes("dead") || value.includes("dick") || value.includes("cock") || value.includes("nigger") || value.includes("pussy") || value.includes("nude") || value.includes("pussy")) return reply(style + " this term is not allowed. You can use .anime command instead")
+        if (value.includes("sex ") || value.includes("porn") || value.includes("dead") || value.includes("dick") || value.includes("cock") || value.includes("nigger") || value.includes("pussy") || value.includes("nude") || value.includes("pussy")) return msg.reply(user.style + " this term is not allowed. You can use .anime command instead")
         msg.react("⌛")
 
         var gis = require('g-i-s');

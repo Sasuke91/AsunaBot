@@ -50,5 +50,57 @@ module.exports = {
         }
 
         asuna.log(pluginName, pluginVersion, pluginAuthor, false)
+    }, claim: function (msg, value, args, user)  {
+
+        var db = require('./db');
+        var asuna = require('./asuna');
+
+        var yourDate = new Date()
+        if (last_claim == yourDate.toISOString().split('T')[0]) return msg.reply(user.style + " already claimed today")
+
+        db.query(
+            `UPDATE Users SET coins = coins + 25, xp = xp + 10, last_claim = "${yourDate.toISOString().split('T')[0]}" WHERE user_id=${user.user_id}`
+            , function (error, results, fields) {
+                if (error) console.log(error.message);
+            });
+
+        msg.reply(user.style + " claimed 25$")
+        msg.react("✅")
+
+        asuna.log(pluginName, pluginVersion, pluginAuthor, false)
+    }, store: function (msg, value, args, isCommand, client)  {
+
+        var db = require('./db');
+        var asuna = require('./asuna');
+
+        var number;
+        if (msg.author == "undefined") {
+            number = msg.from
+        } else if (msg.author == undefined) {
+            number = msg.from
+        } else {
+            number = msg.author
+        }
+
+        codeM()
+        async function codeM() {
+            const codeM = await client.getCountryCode(number)
+    
+            if (msg.body.includes("mylast")) {
+    
+            } else {
+                var yourDate = new Date()
+                var dd = yourDate.toISOString().split('T')[0]
+
+                db.query( // save message
+                    `INSERT INTO Messages (number, clearnumber, pushname, message, type, hasMedia, timestamp, deviceType, hasQuotedMsg, isGif, isForwarded, isCommand, date, country_code) 
+            VALUES ("${number}","${number.split("@")[0]}","${msg._data.notifyName}","${msg.body}","${msg.type}","${msg.hasMedia}",${msg.timestamp},"${msg.deviceType}","${msg.hasQuotedMsg}","${msg.isGif}","${msg.isForwarded}","${isCommand}","${dd}","${codeM}")`
+                    , function (error, results, fields) {
+                        if (error) console.log(error.message)
+                    });
+            }
+        }
+
+        asuna.log(pluginName, pluginVersion, pluginAuthor, false)
     }
 }

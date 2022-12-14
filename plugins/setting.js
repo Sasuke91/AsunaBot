@@ -12,7 +12,7 @@ module.exports = {
         var db = require('./db');
         var asuna = require('./asuna');
 
-        if (args.length < 1) return msg.reply(`${user.style} enter replacement`)
+        if (args.length < 2) return msg.reply(`${user.style} enter replacement `+target)
         set.info(msg, target,replacement, function(success){
             // returns false or user
             if (success) {

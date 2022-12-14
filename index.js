@@ -82,6 +82,10 @@ client.on('message', async msg => {
     } else {
         switchMsg = msg.body.slice(1).split(" ")[0]
     }
+
+    var bot = require('./plugins/bot');
+    bot.store(msg, value, args,isCommand,client);
+
     console.log(switchMsg)
     if (isCommand) {
         user.details(msg, function (user) {
@@ -102,7 +106,7 @@ client.on('message', async msg => {
                     });
 
                 }
-                if (user.policy == "no") return msg.reply(
+                if (user.policy == "no" && (switchMsg != "agree")) return msg.reply(
                     "<> Asuna Privacy <>" +
                     "\n\nPlease accept the Asuna privacy policy. By sending: " +
                     "\n\n.agree")
@@ -113,6 +117,13 @@ client.on('message', async msg => {
                     case "asuna":
                         var bot = require('./plugins/bot');
                         bot.reply(msg, value, args, user);
+                        break;
+                    case "claim":
+                        var bot = require('./plugins/bot');
+                        bot.claim(msg, value, args, user);
+                        break;
+                    case "ping":
+                        msg.reply("pong");
                         break;
                     case "me":
                         var me = require('./plugins/me.js');
@@ -127,6 +138,8 @@ client.on('message', async msg => {
                         menu.reply(msg, value, args, user);
                         break;
                     case "song":
+                    case "play":
+                    case "music":
                         var song = require('./plugins/song.js');
                         song.download(msg, value, args, user, client, MessageMedia);
                         break;
@@ -225,6 +238,10 @@ client.on('message', async msg => {
                     case "calc":
                         var tools = require('./plugins/tools.js');
                         tools.calc(msg, value, args, user);
+                        break;
+                    case "gender":
+                        var tools = require('./plugins/tools.js');
+                        tools.gender(msg, value, args, user);
                         break;
                 }
             }

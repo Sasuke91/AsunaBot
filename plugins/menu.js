@@ -32,6 +32,7 @@ module.exports = {
             +"\n.garticboard"
             +"\n.slotboard"
             +"\n.send < search >"
+            +"\n.gender < name >"
             +"\n.delete"
             +"\n.design < emojie >"
             +"\n.bio < bio >"
