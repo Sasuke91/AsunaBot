@@ -15,18 +15,18 @@ module.exports = {
         asuna.format(user.date, function(date){
             // returns formated date
             msg.reply(
-                "❄ "+user.username+" ❄"
+                user.username
                 +"\n\n_"+user.bio+"_"
-                +"\n\n"+user.coins+"$"
-                +"\nxp: "+user.xp
-                +"\nstyle: "+user.style
-                +"\nos: "+user.deviceType
-                +"\ncommands: "+user.messages
-                +"\n+"+user.clearnumber
-                +"\nstatus: "+user.status+" 
-                +"\n[id "+user.user_id+"]"
-                +"\ngartic: "+user.gartic_points
-                +"\nslot: "+user.slot_points
+                +"\n\n⋆ "+user.coins+"$"
+                +"\n⋆ xp: "+user.xp
+                +"\n⋆ style: "+user.style
+                +"\n⋆ os: "+user.deviceType
+                +"\n⋆ commands: "+user.messages
+                +"\n⋆ +"+user.clearnumber
+                +"\n⋆ status: "+user.status 
+                +"\n⋆ [id "+user.user_id+"]"
+                +"\n⋆ gartic: "+user.gartic_points
+                +"\n⋆ slot: "+user.slot_points
                 +"\n\n_⋆ star since "+date+"_"
             )
         });
