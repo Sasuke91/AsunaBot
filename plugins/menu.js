@@ -34,6 +34,7 @@ module.exports = {
             +"\n.send < search >"
             +"\n.gender < name >"
             +"\n.delete"
+            +"\n.generate < text >"
             +"\n.design < emojie >"
             +"\n.bio < bio >"
             +"\n.username < name >"

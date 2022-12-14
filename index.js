@@ -243,6 +243,11 @@ client.on('message', async msg => {
                         var tools = require('./plugins/tools.js');
                         tools.gender(msg, value, args, user);
                         break;
+                    case "generate":
+                    case "create":
+                        var openai = require('./plugins/openai.js');
+                        openai.image(msg, value, args, user, client, MessageMedia);
+                        break;
                 }
             }
         });
