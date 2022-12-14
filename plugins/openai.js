@@ -15,7 +15,7 @@ module.exports = {
         var asuna = require('./asuna');
         const { Configuration, OpenAIApi } = require("openai");
         const configuration = new Configuration({
-          apiKey: "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",
+          apiKey: "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",
         });
         const openai = new OpenAIApi(configuration);
 

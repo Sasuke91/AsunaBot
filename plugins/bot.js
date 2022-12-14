@@ -100,7 +100,5 @@ module.exports = {
                     });
             }
         }
-
-        asuna.log(pluginName, pluginVersion, pluginAuthor, false)
     }
 }
