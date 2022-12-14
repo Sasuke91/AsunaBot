@@ -22,7 +22,7 @@ process.on('uncaughtException', err => {
 });
 
 const client = new Client({
-    authStrategy: new LocalAuth({ clientId: "client-oneab" })
+    authStrategy: new LocalAuth({ clientId: "client-oneabc" })
 });
 //  puppeteer: { executablePath: '/usr/bin/google-chrome-stable', headless: false, 	args: ['--no-sandbox'], }
 
