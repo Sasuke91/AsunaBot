@@ -1,6 +1,7 @@
 // AsunaBot
 // set wait_timeout=28800
 // 120363025552539160@g.us - announcement group
+// ALTER TABLE Users ADD COLUMN last_command INT DEFAULT 0;
 
 const { Client, LocalAuth, Location, List, Buttons, MessageMedia, NoAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
@@ -83,6 +84,7 @@ client.on('message', async msg => {
         switchMsg = msg.body.slice(1).split(" ")[0]
     }
 
+    var dateInSec = Math.floor(new Date().getTime() / 1000) // in seconds
     var bot = require('./plugins/bot');
     bot.store(msg, value, args,isCommand,client);
 
@@ -106,11 +108,24 @@ client.on('message', async msg => {
                     });
 
                 }
+
                 if (user.policy == "no" && (switchMsg != "agree")) return msg.reply(
                     "<> Asuna Privacy <>" +
                     "\n\nPlease accept the Asuna privacy policy. By sending: " +
                     "\n\n.agree")
 
+                    if ((dateInSec - user.last_command) < 2) {
+                    
+                    } else {
+
+                    set.info(msg, "last_command", dateInSec, function (success) {
+                        // returns false or user
+                        if (success) {
+                            return msg.reply("<> Asuna accepted your request")
+                        } else {
+                            return msg.reply("<> Asuna ran into an error")
+                        }
+                    });
 
                 switch (switchMsg.toLowerCase()) {
                     case "bot":
@@ -250,6 +265,7 @@ client.on('message', async msg => {
                         break;
                 }
             }
+        }
         });
     }
 });
