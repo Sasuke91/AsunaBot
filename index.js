@@ -119,12 +119,7 @@ client.on('message', async msg => {
                     } else {
 
                     set.info(msg, "last_command", dateInSec, function (success) {
-                        // returns false or user
-                        if (success) {
-                            return msg.reply("<> Asuna accepted your request")
-                        } else {
-                            return msg.reply("<> Asuna ran into an error")
-                        }
+
                     });
 
                 switch (switchMsg.toLowerCase()) {
