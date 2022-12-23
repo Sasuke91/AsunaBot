@@ -22,6 +22,8 @@ module.exports = {
                 trophies(results.toString())
                 async function trophies(res) {
 
+                    console.log(res)
+
                     var amount = 0;
                     var text;
 
