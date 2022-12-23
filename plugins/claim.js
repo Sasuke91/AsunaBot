@@ -19,7 +19,7 @@ module.exports = {
 
             , function (error, results, fields) {
                 if (error) console.log(error.message);
-                trophies(JSON.parse(JSON.stringify(results)))
+                trophies(results)
                 async function trophies(res) {
 
                     var amount = 0;
