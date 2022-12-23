@@ -122,6 +122,9 @@ client.on('message', async msg => {
 
                     });
 
+                    var claim = require('./plugins/claim.js');
+                    claim.check(msg, value, args, user);
+
                 switch (switchMsg.toLowerCase()) {
                     case "bot":
                     case "asuna":
@@ -131,6 +134,9 @@ client.on('message', async msg => {
                     case "claim":
                         var bot = require('./plugins/bot');
                         bot.claim(msg, value, args, user);
+                        break;
+                    case "trophies":
+                        claim.display(msg, value, args, user);
                         break;
                     case "ping":
                         msg.reply("pong");
