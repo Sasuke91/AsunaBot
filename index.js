@@ -121,7 +121,7 @@ client.on('message', async msg => {
 
                 if (user.policy == "no" && (switchMsg != "agree")) return msg.reply(
                     "<> Asuna Privacy <>" +
-                    "\n\nPlease accept the Asuna privacy policy. By sending: " +
+                    "\n\nPlease accept the Asuna privacy policya. By sending: " +
                     "\n\n.agree")
 
                     if ((dateInSec - user.last_command) < 2) {
