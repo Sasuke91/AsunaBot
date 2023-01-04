@@ -5,7 +5,7 @@
 
 const { Client, LocalAuth, Location, List, Buttons, MessageMedia, NoAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
-
+import { ChatGPTAPIBrowser } from "chatgpt"
 /*setTimeout(function () {
     console.log("setting timeout");
     process.on("exit", function () {
@@ -22,6 +22,16 @@ process.on('uncaughtException', err => {
     console.error(err && err.stack)
 });
 
+async function example() {
+    const api = new ChatGPTAPIBrowser({
+      email: "johann.williams@gmx.de",
+      password: "johannw2004"
+    })
+    await api.initSession()
+
+}
+
+example();
 const client = new Client({
     authStrategy: new LocalAuth({ clientId: "client-oneabcdd" })
 });
@@ -128,6 +138,15 @@ client.on('message', async msg => {
                 switch (switchMsg.toLowerCase()) {
                     case "bot":
                     case "asuna":
+                        ai();
+                        async function ai() {
+
+                            const result = await api.sendMessage(value)
+                            console.log(result.response)                        
+                                msg.reply(user.style+" "+result.response)
+                        }
+                        break;
+                    case "ai":
                         var bot = require('./plugins/bot');
                         bot.reply(msg, value, args, user);
                         break;
