@@ -25,7 +25,7 @@ process.on('uncaughtException', err => {
 async function example() {
     const api = new ChatGPTAPIBrowser({
       email: "johann.williams@gmx.de",
-      password: "johannw2004"
+      password: ""
     })
     await api.initSession()
 
