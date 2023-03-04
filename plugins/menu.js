@@ -13,10 +13,9 @@ module.exports = {
         var asuna = require('./asuna');
 
         msg.reply(
-            "< AsunaBot >"
+            user.style+" ⋆ A S U N A ⋆"
             +"\n\n.me"
-            +"\n.user < id / @ >"
-            +"\n.song < name >"
+            +"\n.song {name}"
             +"\n.bot"
             +"\n.sfw"
             +"\n.nsfw"
@@ -28,16 +27,16 @@ module.exports = {
             +"\n.wame"
             +"\n.translate"
             +"\n.sticker"
-            +"\n.leaderboard"
+            +"\n.send {search}"
+            +"\n.gender {name} >"
+            +"\n.delete"
+            +"\n.user {id / @}"
+            +"\n\n.design {emojie}"
+            +"\n.bio {bio} >"
+            +"\n.username {name}"
+            +"\n\n.leaderboard"
             +"\n.garticboard"
             +"\n.slotboard"
-            +"\n.send < search >"
-            +"\n.gender < name >"
-            +"\n.delete"
-            +"\n.generate < text >"
-            +"\n.design < emojie >"
-            +"\n.bio < bio >"
-            +"\n.username < name >"
         )
 
         asuna.log(pluginName, pluginVersion, pluginAuthor, false)

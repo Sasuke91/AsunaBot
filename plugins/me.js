@@ -15,7 +15,7 @@ module.exports = {
         asuna.format(user.date, function(date){
             // returns formated date
             msg.reply(
-                user.username
+                user.style+" "+user.username
                 +"\n\n_"+user.bio+"_"
                 +"\n\n⋆ "+user.coins+"$"
                 +"\n⋆ xp: "+user.xp
