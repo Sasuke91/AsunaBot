@@ -129,13 +129,7 @@ client.on('message', async msg => {
                 switch (switchMsg.toLowerCase()) {
                     case "bot":
                     case "asuna":
-                        ai();
-                        async function ai() {
-
-                            const result = await api.sendMessage(value)
-                            console.log(result.response)                        
-                                msg.reply(user.style+" "+result.response)
-                        }
+                            msg.reply(user.style+" "+user.username)
                         break;
                     case "ai":
                         var bot = require('./plugins/bot');
