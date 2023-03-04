@@ -60,7 +60,7 @@ module.exports = {
             ran = getRandom('.mp3')
             exec(`yt-dlp -x --audio-format mp3 -o, --output ${ran} "ytsearch:${value}"`, (err) => {
 
-                if (err) returnmsg.reply(`${user.style} Error\n\n\n` + err.message)
+                if (err) return msg.reply(`${user.style} Error\n\n\n` + err.message)
 
                 sendMediaAudio(ran, user.style + ' Heres your song').then(function () { });
 
