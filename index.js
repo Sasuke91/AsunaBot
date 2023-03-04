@@ -5,8 +5,8 @@
 
 const { Client, LocalAuth, Location, List, Buttons, MessageMedia, NoAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
-import { ChatGPTAPIBrowser } from "chatgpt"
-/*setTimeout(function () {
+
+setTimeout(function () {
     console.log("setting timeout");
     process.on("exit", function () {
         require("child_process").spawn(process.argv.shift(), process.argv, {
@@ -16,24 +16,15 @@ import { ChatGPTAPIBrowser } from "chatgpt"
         });
     });
     process.exit();
-}, 60 * 100 * 10 * 30 * 4);*/
+}, 600 * 100 * 10 * 30 * 4);
 
 process.on('uncaughtException', err => {
     console.error(err && err.stack)
 });
 
-async function example() {
-    const api = new ChatGPTAPIBrowser({
-      email: "johann.williams@gmx.de",
-      password: ""
-    })
-    await api.initSession()
 
-}
-
-example();
 const client = new Client({
-    authStrategy: new LocalAuth({ clientId: "client-oneabcdd" })
+    authStrategy: new LocalAuth({ clientId: "Asuna-client" })
 });
 //  puppeteer: { executablePath: '/usr/bin/google-chrome-stable', headless: false, 	args: ['--no-sandbox'], }
 
