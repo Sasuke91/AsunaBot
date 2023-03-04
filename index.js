@@ -129,7 +129,7 @@ client.on('message', async msg => {
                 switch (switchMsg.toLowerCase()) {
                     case "bot":
                     case "asuna":
-                            msg.reply(user.style+" "+user.username)
+                            msg.reply(user.style+" Hi "+user.username)
                         break;
                     case "ai":
                         var bot = require('./plugins/bot');
