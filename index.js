@@ -268,6 +268,10 @@ client.on('message', async msg => {
                         var openai = require('./plugins/openai.js');
                         openai.image(msg, value, args, user, client, MessageMedia);
                         break;
+                    case "tf2":
+                        var tf2 = require('./plugins/tf2.js');
+                        tf2.download(msg, value, args, user, client, MessageMedia);
+                        break;
                 }
             }
         }
