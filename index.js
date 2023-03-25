@@ -38,7 +38,7 @@ process.on('uncaughtException', err => {
 
 
 const client = new Client({
-    authStrategy: new LocalAuth({ clientId: "Asuna-client" })
+    authStrategy: new LocalAuth({ clientId: "Asuna-client-11" })
 });
 //  puppeteer: { executablePath: '/usr/bin/google-chrome-stable', headless: false, 	args: ['--no-sandbox'], }
 

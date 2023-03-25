@@ -12,7 +12,7 @@ module.exports = {
         var db = require('./db');
         var asuna = require('./asuna');
 
-        db.query(
+        /*db.query(
             `SELECT trophy
             FROM Trophies
             WHERE user_id = `+user.user_id
@@ -62,7 +62,7 @@ module.exports = {
 
                     msg.reply("You received "+amount+" :\n"+text+"\n\n_trophies added to your profile_");
                 }
-            });
+            });*/
 
         asuna.log(pluginName, pluginVersion, pluginAuthor, false)
     }, display: function (msg, value, args, user)  {

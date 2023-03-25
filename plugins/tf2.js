@@ -14,7 +14,7 @@ module.exports = {
 
             getJSON('https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?key='+key+'&appid=440', function (error, res) {
                 // console.log(res);
-                msg.reply("current playing team fortress 2 players\n\n"+res.player_count)
+                msg.reply("current playing team fortress 2 players\n\n"+res.response.player_count)
 
             });
 
