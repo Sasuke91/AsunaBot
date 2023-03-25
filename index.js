@@ -3,6 +3,28 @@
 // 120363025552539160@g.us - announcement group
 // ALTER TABLE Users ADD COLUMN last_command INT DEFAULT 0;
 
+const { exec } = require('child_process');
+
+catLog("A S U N A")
+catLog("B O T")
+
+function catLog(text) {
+    exec('echo '+text+'| lolcat', (error, stdout, stderr) => {
+    if (error) {
+        console.error(`error: ${error.message}`);
+        return;
+    }
+
+    if (stderr) {
+        console.error(`stderr: ${stderr}`);
+        return;
+    }
+
+    console.log(`stdout:\n${stdout}`);
+    });
+}
+
+
 const { Client, LocalAuth, Location, List, Buttons, MessageMedia, NoAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 
@@ -89,8 +111,10 @@ client.on('message', async msg => {
     var bot = require('./plugins/bot');
     bot.store(msg, value, args,isCommand,client);
 
-    console.log(switchMsg)
+    
     if (isCommand) {
+        catLog(switchMsg)
+
         user.details(msg, function (user) {
             // returns false or user
             if (switchMsg == "register" && (user == false)) {
