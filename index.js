@@ -3,25 +3,17 @@
 // 120363025552539160@g.us - announcement group
 // ALTER TABLE Users ADD COLUMN last_command INT DEFAULT 0;
 
-const { exec } = require('child_process');
+
+const lolcatjs = require('lolcatjs');
 
 catLog("A S U N A")
 catLog("B O T")
 
 function catLog(text) {
-    exec('echo '+text+'| lolcat', (error, stdout, stderr) => {
-    if (error) {
-        console.error(`error: ${error.message}`);
-        return;
-    }
-
-    if (stderr) {
-        console.error(`stderr: ${stderr}`);
-        return;
-    }
-
-    console.log(`stdout:\n${stdout}`);
-    });
+    lolcatjs.options.seed = Math.round(Math.random() * 1000);
+    lolcatjs.options.colors = true;
+    
+    lolcatjs.fromString(text);
 }
 
 

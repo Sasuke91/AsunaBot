@@ -9,3 +9,4 @@ npm i youtube-search-without-api-key
 npm i get-json
 npm i translate-google
 npm install openai
+npm i lolcatjs
