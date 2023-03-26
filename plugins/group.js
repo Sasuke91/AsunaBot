@@ -16,7 +16,7 @@ module.exports = {
                 msg.react("✅")
             }).catch((err) => {
                 if (err) {
-                    msg.reply("i need admin to do this")
+                    msg.reply("i need admin to do this\n\n"+err)
                     msg.react("❌")
                 }
             })
