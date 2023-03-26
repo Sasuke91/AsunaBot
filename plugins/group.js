@@ -23,7 +23,7 @@ module.exports = {
 
         
         }
-    }, tagall: function (msg, value, args, user)  {
+    }, tagall: function (msg, value, args, user, client)  {
         if (user.status != "vip" && user.status != "owner") return msg.reply(user.style+" you need vip to use this command")
         tagall()
         async function tagall() {
