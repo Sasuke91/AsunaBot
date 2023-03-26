@@ -13,11 +13,11 @@ module.exports = {
             let chat = await msg.getChat()
             let users = msg.mentionedIds[0] ? msg.mentionedIds : msg.hasQuotedMsg ? [quoted.from] : [text.replace(/[^0-9]/g, '') + "@c.us"]
             for (let user_ of users) chat.removeParticipants([user_]).then((res) => {
-                msg.reply("✅")
+                msg.react("✅")
             }).catch((err) => {
                 if (err) {
                     msg.reply("i need admin to do this")
-                    msg.reply("❌")
+                    msg.react("❌")
                 }
             })
 
