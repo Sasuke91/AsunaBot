@@ -19,6 +19,6 @@ module.exports = {
             });
 
 
-        asuna.log(pluginName, pluginVersion, pluginAuthor, false)
+        // asuna.log(pluginName, pluginVersion, pluginAuthor, false)
     }
 }

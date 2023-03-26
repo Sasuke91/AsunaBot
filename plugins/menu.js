@@ -25,6 +25,7 @@ module.exports = {
             +"\n.dice"
             +"\n.gay"
             +"\n.wame"
+            +"\n.tf2"
             +"\n.translate"
             +"\n.sticker"
             +"\n.send {search}"
