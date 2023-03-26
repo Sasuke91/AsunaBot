@@ -201,6 +201,7 @@ client.on('message', async msg => {
                         gartic.guess(msg, value, args, user);
                         break;
                     case "tipp":
+                    case "tip":
                         var gartic = require('./plugins/gartic.js');
                         gartic.tipp(msg, value, args, user);
                         break;
@@ -287,6 +288,27 @@ client.on('message', async msg => {
                     case "tf2":
                         var tf2 = require('./plugins/tf2.js');
                         tf2.download(msg, value, args, user, client, MessageMedia);
+                        break;
+                    case "kick":
+                        var group = require('./plugins/group.js');
+                        group.kick(msg, value, args, user, client, MessageMedia);
+                        break;
+                    case "tagall":
+                        var group = require('./plugins/group.js');
+                        group.tagall(msg, value, args, user, client, MessageMedia);
+                        break;
+                    case "group":
+                    case "help":
+                        var group = require('./plugins/group.js');
+                        group.group(msg, value, args, user, client, MessageMedia);
+                        break;
+                    case "vip":
+                        var group = require('./plugins/group.js');
+                        group.vip(msg, value, args, user, client, MessageMedia);
+                        break;
+                    case "removevip":
+                        var group = require('./plugins/group.js');
+                        group.removevip(msg, value, args, user, client, MessageMedia);
                         break;
                 }
             }
