@@ -3,6 +3,7 @@
 // 120363025552539160@g.us - announcement group
 // ALTER TABLE Users ADD COLUMN last_command INT DEFAULT 0;
 
+var id = "Asuna-client-up-22"
 
 const lolcatjs = require('lolcatjs');
 
@@ -38,7 +39,7 @@ process.on('uncaughtException', err => {
 
 
 const client = new Client({
-    authStrategy: new LocalAuth({ clientId: "Asuna-client-up-3" })
+    authStrategy: new LocalAuth({ clientId: id })
 });
 //  puppeteer: { executablePath: '/usr/bin/google-chrome-stable', headless: false, 	args: ['--no-sandbox'], }
 
@@ -198,7 +199,7 @@ client.on('message', async msg => {
                         break;
                     case "guess":
                         var gartic = require('./plugins/gartic.js');
-                        gartic.guess(msg, value, args, user, Client, Buttons);
+                        gartic.guess(msg, value, args, user, client, Buttons);
                         break;
                     case "tipp":
                     case "tip":
