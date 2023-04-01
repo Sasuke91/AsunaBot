@@ -198,7 +198,7 @@ client.on('message', async msg => {
                         break;
                     case "guess":
                         var gartic = require('./plugins/gartic.js');
-                        gartic.guess(msg, value, args, user);
+                        gartic.guess(msg, value, args, user, Client, Buttons);
                         break;
                     case "tipp":
                     case "tip":
