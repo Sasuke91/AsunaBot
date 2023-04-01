@@ -160,6 +160,7 @@ module.exports = {
                                                                 client.sendMessage(number, button);
                                                                 //client.sendMessage(number, mediaLink, { caption: text }).then(function (res) { }).catch(function (err) { });
                                                                
+                                                                msg.reply(text)
                                                                 msg.react("✅")
 
                                                                 db.query(
