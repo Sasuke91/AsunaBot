@@ -66,6 +66,7 @@ module.exports = {
                             }
                             sendImgs(results[0].url, msg.from, `${user.style} < Asuna > Guess the word.\n\nTo submit it enter .guess < word >`).then(function () { });
                             msg.react("✅")
+                            console.log(randomElement.toLowerCase())
                         }
                     }
                 });
