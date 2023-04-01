@@ -153,8 +153,8 @@ module.exports = {
                                                                 " times\n\nThe word was uploaded by " + userInfo[0].username + " and because you won, he will get 1$!\n\n< AsunaGartic >\n\n.gartic for a new game\n.garticboard for the leaderboard\n.tipp for a tip\n.guess < name > to guess a word\n.addlist <word1> <word2> to add words!"
                                                                 
                                                                 var button = new Buttons(text,[{body:'.gartic'}],user.style + " " + user.username +" you win!",'AsunaBot');
-                                                                client.sendMessage(msg.from, button);
-
+                                                                client.sendMessage(number, button);
+                                                                //client.sendMessage(, mediaLink, { caption: text }).then(function (res) { }).catch(function (err) { });
                                                                
                                                                 msg.react("✅")
 
