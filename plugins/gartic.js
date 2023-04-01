@@ -58,7 +58,7 @@ module.exports = {
                                     }
                             });
 
-                            console.log(JSON.stringify(results, null, '  '));
+                            // console.log(JSON.stringify(results, null, '  '));
 
                             async function sendImgs(link, number, text) {
                                 const mediaLink = await MessageMedia.fromUrl(link, { unsafeMime: true });
