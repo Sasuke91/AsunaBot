@@ -3,7 +3,7 @@
 // 120363025552539160@g.us - announcement group
 // ALTER TABLE Users ADD COLUMN last_command INT DEFAULT 0;
 
-var id = "Asuna-client-up-22"
+var id = "Asuna-client-up-26"
 
 const lolcatjs = require('lolcatjs');
 
@@ -145,7 +145,9 @@ client.on('message', async msg => {
 
                 switch (switchMsg.toLowerCase()) {
                     case "echo":
-                         msg.reply(value);
+                        // msg.reply(value);
+                         client.sendMessage(msg.from, value);
+
                         break;
                     case "bot":
                     case "asuna":
