@@ -144,6 +144,9 @@ client.on('message', async msg => {
                     claim.check(msg, value, args, user);
 
                 switch (switchMsg.toLowerCase()) {
+                    case "echo":
+                         msg.reply(value);
+                        break;
                     case "bot":
                     case "asuna":
                             msg.reply(user.style+" Hi "+user.username)
