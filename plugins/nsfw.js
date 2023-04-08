@@ -178,7 +178,7 @@ module.exports = {
                 msg.react("🖤")
             });
             default:
-                getJSON('https://fantox-apis.vercel.app/' + value)
+                getJSON('https://fantox-apis.vercel.app/' + value.replace(" ",""))
                 .then(function (response) {
                     getJSON('https://animechan.vercel.app/api/random', function (error, res) {
                         console.log(res);
