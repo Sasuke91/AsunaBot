@@ -21,106 +21,106 @@ module.exports = {
 "\n.nsfw paizuri"+
 "\n.nsfw ecchi"+
 "\n.nsfw ero"+
-"\n.Pussy"+
-"\n.Spreadpussy"+
-"\n.Genshin"+
-"\n.Squirt"+
-"\n.Glasses"+
-"\n.Sunglasses"+
-"\n.Swimsuit"+
-"\n.School Swimsuit"+
-"\n.Holo Live"+
-"\n.Ass"+
-"\n.Underwear"+
-"\n.Nipples"+
-"\n.Uncensored"+
-"\n.Sex"+
-"\n.Sex2"+
-"\n.Sex3"+
-"\n.Blonde"+
-"\n.Twintails"+
-"\n.Breasts"+
-"\n.Thighhighs"+
-"\n.Skirt"+
-"\n.Gamecg"+
-"\n.Animal Ears"+
-"\n.Foxgirl"+
-"\n.Dress"+
-"\n.School Uniform"+
-"\n.Twogirls"+
-"\n.Gloves"+
-"\n.Vocaloid"+
-"\n.Touhou"+
-"\n.Weapon"+
-"\n.With Flowers"+
-"\n.Pinkhair"+
-"\n.Clouds View"+
-"\n.White"+
-"\n.Animal"+
-"\n.Tail"+
-"\n.Nude"+
-"\n.Ponytail"+
-"\n.Bed"+
-"\n.White Hair"+
-"\n.Ribbons"+
-"\n.Japanese Cloths"+
-"\n.Hatsune Miku"+
-"\n.Bikini"+
-"\n.Barefoot"+
-"\n.Nobra"+
-"\n.Food"+
-"\n.Wings"+
-"\n.Pantyhose"+
-"\n.Open Shirt"+
-"\n.Headband"+
-"\n.Penis"+
-"\n.Close"+
-"\n.Wet"+
-"\n.Catgirl"+
-"\n.Wolfgirl"+
-"\n.Neko"+
-"\n.Loli"+
-"\n.Spread Legs"+
-"\n.Bra"+
-"\n.Fate Series"+
-"\n.Tree"+
-"\n.Elbow Gloves"+
-"\n.Green Hair"+
-"\n.Horns"+
-"\n.With Petals"+
-"\n.Drunk"+
-"\n.Cum"+
-"\n.Head Dress"+
-"\n.Tie"+
-"\n.Shorts"+
-"\n.Maid"+
-"\n.Headphones"+
-"\n.Anus View"+
-"\n.Idol"+
-"\n.Gun"+
-"\n.Stockings"+
-"\n.Tears"+
-"\n.Breasthold"+
-"\n.Necklace"+
-"\n.Seethrough"+
-"\n.Bunnyears"+
-"\n.Bunnygirl"+
-"\n.Topless"+
-"\n.Beach"+
-"\n.Erect Nipples"+
-"\n.Yuri"+
-"\n.Vampire"+
-"\n.Shirt"+
-"\n.Pantypull"+
-"\n.Torn Clothes"+
-"\n.Bondage"+
-"\n.Demon"+
-"\n.Bell"+
-"\n.Shirt Lift"+
-"\n.Tattoo"+
-"\n.Chain"+
-"\n.Flat Chest"+
-"\n.Fingering")
+"\n.nsfw Pussy"+
+"\n.nsfw Spreadpussy"+
+"\n.nsfw Genshin"+
+"\n.nsfw Squirt"+
+"\n.nsfw Glasses"+
+"\n.nsfw Sunglasses"+
+"\n.nsfw Swimsuit"+
+"\n.nsfw School Swimsuit"+
+"\n.nsfw Holo Live"+
+"\n.nsfw Ass"+
+"\n.nsfw Underwear"+
+"\n.nsfw Nipples"+
+"\n.nsfw Uncensored"+
+"\n.nsfw Sex"+
+"\n.nsfw Sex2"+
+"\n.nsfw Sex3"+
+"\n.nsfw Blonde"+
+"\n.nsfw Twintails"+
+"\n.nsfw Breasts"+
+"\n.nsfw Thighhighs"+
+"\n.nsfw Skirt"+
+"\n.nsfw Gamecg"+
+"\n.nsfw Animal Ears"+
+"\n.nsfw Foxgirl"+
+"\n.nsfw Dress"+
+"\n.nsfw School Uniform"+
+"\n.nsfw Twogirls"+
+"\n.nsfw Gloves"+
+"\n.nsfw Vocaloid"+
+"\n.nsfw Touhou"+
+"\n.nsfw Weapon"+
+"\n.nsfw With Flowers"+
+"\n.nsfw Pinkhair"+
+"\n.nsfw Clouds View"+
+"\n.nsfw White"+
+"\n.nsfw Animal"+
+"\n.nsfw Tail"+
+"\n.nsfw Nude"+
+"\n.nsfw Ponytail"+
+"\n.nsfw Bed"+
+"\n.nsfw White Hair"+
+"\n.nsfw Ribbons"+
+"\n.nsfw Japanese Cloths"+
+"\n.nsfw Hatsune Miku"+
+"\n.nsfw Bikini"+
+"\n.nsfw Barefoot"+
+"\n.nsfw Nobra"+
+"\n.nsfw Food"+
+"\n.nsfw Wings"+
+"\n.nsfw Pantyhose"+
+"\n.nsfw Open Shirt"+
+"\n.nsfw Headband"+
+"\n.nsfw Penis"+
+"\n.nsfw Close"+
+"\n.nsfw Wet"+
+"\n.nsfw Catgirl"+
+"\n.nsfw Wolfgirl"+
+"\n.nsfw Neko"+
+"\n.nsfw Loli"+
+"\n.nsfw Spread Legs"+
+"\n.nsfw Bra"+
+"\n.nsfw Fate Series"+
+"\n.nsfw Tree"+
+"\n.nsfw Elbow Gloves"+
+"\n.nsfw Green Hair"+
+"\n.nsfw Horns"+
+"\n.nsfw With Petals"+
+"\n.nsfw Drunk"+
+"\n.nsfw Cum"+
+"\n.nsfw Head Dress"+
+"\n.nsfw Tie"+
+"\n.nsfw Shorts"+
+"\n.nsfw Maid"+
+"\n.nsfw Headphones"+
+"\n.nsfw Anus View"+
+"\n.nsfw Idol"+
+"\n.nsfw Gun"+
+"\n.nsfw Stockings"+
+"\n.nsfw Tears"+
+"\n.nsfw Breasthold"+
+"\n.nsfw Necklace"+
+"\n.nsfw Seethrough"+
+"\n.nsfw Bunnyears"+
+"\n.nsfw Bunnygirl"+
+"\n.nsfw Topless"+
+"\n.nsfw Beach"+
+"\n.nsfw Erect Nipples"+
+"\n.nsfw Yuri"+
+"\n.nsfw Vampire"+
+"\n.nsfw Shirt"+
+"\n.nsfw Pantypull"+
+"\n.nsfw Torn Clothes"+
+"\n.nsfw Bondage"+
+"\n.nsfw Demon"+
+"\n.nsfw Bell"+
+"\n.nsfw Shirt Lift"+
+"\n.nsfw Tattoo"+
+"\n.nsfw Chain"+
+"\n.nsfw Flat Chest"+
+"\n.nsfw Fingering")
 
         var asuna = require('./asuna');
         var getJSON = require('get-json')
@@ -178,7 +178,7 @@ module.exports = {
                 msg.react("🖤")
             });
             default:
-                getJSON('https://fantox-apis.vercel.app/' + args[1])
+                getJSON('https://fantox-apis.vercel.app/' + value)
                 .then(function (response) {
                     getJSON('https://animechan.vercel.app/api/random', function (error, res) {
                         console.log(res);
