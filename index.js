@@ -102,7 +102,7 @@ client.on('message', async msg => {
 
     var dateInSec = Math.floor(new Date().getTime() / 1000) // in seconds
     var bot = require('./plugins/bot');
-    bot.store(msg, value, args,isCommand,client);
+    // CANCELED TO IMPROVE PERFORMANCE bot.store(msg, value, args,isCommand,client);
 
     
     if (isCommand) {
